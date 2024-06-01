@@ -6,10 +6,11 @@ on:
       - dev
 jobs:
   test:
+    environment: Testing
     env: 
       MONGODB_CLUSTER_ADDRESS: cluster0.a6zkmfl.mongodb.net
-      MONGODB_USERNAME: karthikeeeengg1
-      MONGODB_PASSWORD: 1S2i8UBSpHGusXOB
+      MONGODB_USERNAME: $ {{ secerts.MONGODB_USERNAME}}
+      MONGODB_PASSWORD: $ {{ secerts.MONGODB_PASSWORD}}
       PORT: 8080
     runs-on: ubuntu-latest
     steps:
